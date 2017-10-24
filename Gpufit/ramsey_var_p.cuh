@@ -58,7 +58,7 @@ __device__ void calculate_ramsey_var_p(
 	current_derivative[3 * n_points ] = -p[0]*2*pi*(x-p[7])*ex*sin1;
 	current_derivative[4 * n_points ] = -p[1]*2*pi*(x-p[8])*ex*sin2;
 	current_derivative[5 * n_points ] = -log(x/p[6] + 0.000001)*ex*t2arg*(p[0]*cos1 + p[1]*cos2);
-	current_derivative[6 * n_points ] = p[5]*1.f/(p[6]*p[6])*x*ex*pow(t2arg,-1)*(p[0]*cos1 + p[1]*cos2);
+	current_derivative[6 * n_points ] = p[5]*1.f/(p[6]*p[6])*x*ex*pow(x/p[6],p[5]-1)*(p[0]*cos1 + p[1]*cos2);
 	current_derivative[7 * n_points ] = p[0]*2*pi*p[3]*sin1*ex;
 	current_derivative[8 * n_points ] = p[1]*2*pi*p[4]*sin2*ex;
 	
