@@ -125,6 +125,8 @@ set( GpuCudaHeaders
 	cuda_gaussjordan.cuh
 	cuda_kernels.cuh
 	gpu_data.cuh
+	ramsey_fixed_p.cuh
+	ramsey_var_p.cuh
 )
 
 set( GpuCudaSources

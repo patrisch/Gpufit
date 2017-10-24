@@ -8,6 +8,8 @@
 #define GAUSS_2D_ROTATED 3
 #define CAUCHY_2D_ELLIPTIC 4
 #define LINEAR_1D 5
+#define	RAMSEY_FIXED_P 6
+#define	RAMSEY_VAR_P 7
 
 // estimator ID
 #define LSE 0
@@ -50,7 +52,6 @@ int gpufit
 
 char const * gpufit_get_last_error() ;
 
-// returns 1 if cuda is available and 0 otherwise
 int gpufit_cuda_available();
 
 int gpufit_get_cuda_version(int * runtime_version, int * driver_version);

@@ -77,6 +77,12 @@ void FitInterface::set_number_of_parameters(int const model_id)
     case LINEAR_1D:
         n_parameters_ = 2;
         break;
+	case RAMSEY_FIXED_P:
+		n_parameters_ = 8;
+		break;
+	case RAMSEY_VAR_P:
+		n_parameters_ = 9;
+		break;
     default:
         break;
     }

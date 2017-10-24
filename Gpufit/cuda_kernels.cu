@@ -7,6 +7,8 @@
 #include "gauss_2d_elliptic.cuh"
 #include "gauss_2d_rotated.cuh"
 #include "cauchy_2d_elliptic.cuh"
+#include "ramsey_fixed_p.cuh"
+#include "ramsey_var_p.cuh"
 #include "lse.cuh"
 #include "mle.cuh"
 
@@ -119,6 +121,10 @@ __global__ void cuda_calc_curve_values(
         calculate_cauchy2delliptic(current_parameters, n_fits, n_points, current_values, current_derivatives, point_index, fit_index, chunk_index, user_info, user_info_size);
     else if (model_id == LINEAR_1D)
         calculate_linear1d(current_parameters, n_fits, n_points, current_values, current_derivatives, point_index, fit_index, chunk_index, user_info, user_info_size);
+	else if (model_id == RAMSEY_FIXED_P)
+        calculate_ramsey_fixed_p(current_parameters, n_fits, n_points, current_values, current_derivatives, point_index, fit_index, chunk_index, user_info, user_info_size);
+	else if (model_id == RAMSEY_VAR_P)
+        calculate_ramsey_var_p(current_parameters, n_fits, n_points, current_values, current_derivatives, point_index, fit_index, chunk_index, user_info, user_info_size);
 }
 
 /* Description of the sum_up_floats function
